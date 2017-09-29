@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Amenite</title>
+    <title>Aménité</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<%= render partial: 'layouts/header' %>
+  	<main>	
+	    <%= yield %>
+  	</main>
+  	<%= render partial: 'layouts/footer'%>
   </body>
 </html>
