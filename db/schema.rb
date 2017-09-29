@@ -16,17 +16,26 @@ ActiveRecord::Schema.define(version: 20170928225056) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "provider_categories", force: :cascade do |t|
+    t.integer "provider_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "providers", force: :cascade do |t|
     t.string "name"
+    t.text "amenity_details"
+    t.text "address"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "hours"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
